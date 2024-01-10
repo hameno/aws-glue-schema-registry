@@ -57,7 +57,7 @@ public class JsonDeserializer implements GlueSchemaRegistryDataFormatDeserialize
     public JsonDeserializer(GlueSchemaRegistryConfiguration configs) {
         this.schemaRegistrySerDeConfigs = configs;
         JsonNodeFactory jsonNodeFactory = JsonNodeFactory.withExactBigDecimals(true);
-        this.objectMapper = new ObjectMapper();
+        this.objectMapper = new ObjectMapper().findAndRegisterModules();
         this.objectMapper.setNodeFactory(jsonNodeFactory);
         if (configs != null) {
             if (!CollectionUtils.isEmpty(configs.getJacksonSerializationFeatures())) {

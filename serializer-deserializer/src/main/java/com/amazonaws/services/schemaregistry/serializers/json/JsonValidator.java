@@ -37,7 +37,7 @@ public class JsonValidator {
      */
     public void validateDataWithSchema(JsonNode schemaNode, JsonNode dataNode) {
         try {
-            ObjectMapper mapper = new ObjectMapper();
+            ObjectMapper mapper = new ObjectMapper().findAndRegisterModules();
             JSONObject rawSchema = new JSONObject(mapper.writeValueAsString(schemaNode));
             Schema schema = SchemaLoader.load(rawSchema, new ReferenceDisabledSchemaClient());
 

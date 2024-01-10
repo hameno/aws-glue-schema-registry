@@ -106,6 +106,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+
 @ExtendWith(LocalstackDockerExtension.class)
 @LocalstackDockerProperties(services = {ServiceName.KINESIS, ServiceName.DYNAMO, ServiceName.CLOUDWATCH}, imageName =
         "public.ecr.aws/d4c7g6k3/localstack", imageTag = "0.12.10")

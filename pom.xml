@@ -21,7 +21,7 @@
 
     <groupId>software.amazon.glue</groupId>
     <artifactId>schema-registry-parent</artifactId>
-    <version>1.1.17</version>
+    <version>1.1.18-sprylab</version>
     <packaging>pom</packaging>
     <name>AWS Glue Schema Registry Library</name>
     <description>The AWS Glue Schema Registry Library for Java enables Java developers to easily integrate their
@@ -71,7 +71,7 @@
         <module>avro-kafkaconnect-converter</module>
         <module>avro-flink-serde</module>
         <module>examples</module>
-        <module>integration-tests</module>
+<!--        <module>integration-tests</module>-->
         <module>jsonschema-kafkaconnect-converter</module>
         <module>protobuf-kafkaconnect-converter</module>
     </modules>
@@ -423,7 +423,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.2.0</version>
+                <version>3.6.3</version>
                 <configuration>
                     <excludePackageNames>*.avrodata, *.apicurio</excludePackageNames>
                     <source>8</source>

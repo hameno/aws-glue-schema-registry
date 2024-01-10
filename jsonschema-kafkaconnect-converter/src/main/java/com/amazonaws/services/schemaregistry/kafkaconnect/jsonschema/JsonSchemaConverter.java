@@ -52,7 +52,7 @@ import java.util.Map;
 @Data
 public class JsonSchemaConverter implements Converter {
     private static final Logger LOGGER = LoggerFactory.getLogger(JsonSchemaConverter.class);
-    private ObjectMapper objectMapper = new ObjectMapper().setNodeFactory(JsonNodeFactory.withExactBigDecimals(true));
+    private ObjectMapper objectMapper = new ObjectMapper().findAndRegisterModules().setNodeFactory(JsonNodeFactory.withExactBigDecimals(true));
 
     private GlueSchemaRegistryKafkaSerializer serializer;
     private GlueSchemaRegistryKafkaDeserializer deserializer;

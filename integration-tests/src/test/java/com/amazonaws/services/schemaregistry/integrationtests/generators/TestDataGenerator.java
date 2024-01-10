@@ -27,7 +27,7 @@ public interface TestDataGenerator<T> {
     default JsonNode loadJson(String jsonFilePath) {
         try {
             File file = new File(jsonFilePath);
-            return new ObjectMapper().readTree(file);
+            return new ObjectMapper().findAndRegisterModules().readTree(file);
         } catch (Exception e) {
             throw new AWSSchemaRegistryException(String.format("Failed to load the json file : ", jsonFilePath), e);
         }

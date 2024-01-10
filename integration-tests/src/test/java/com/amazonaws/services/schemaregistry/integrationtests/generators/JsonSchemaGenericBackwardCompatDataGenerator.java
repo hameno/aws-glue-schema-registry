@@ -52,7 +52,7 @@ public class JsonSchemaGenericBackwardCompatDataGenerator implements TestDataGen
     @SneakyThrows
     public static boolean filterRecords(JsonDataWithSchema jsonDataWithSchema) {
         String payload = jsonDataWithSchema.getPayload();
-        JsonNode jsonNode = new ObjectMapper().readTree(payload);
+        JsonNode jsonNode = new ObjectMapper().findAndRegisterModules().readTree(payload);
 
         return !String.valueOf(jsonNode.get("f1")).contains("Stranger") || Integer.parseInt(
             String.valueOf(jsonNode.get("f2"))) != 911;
